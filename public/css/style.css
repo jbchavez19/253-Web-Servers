@@ -1,0 +1,22 @@
+.container {
+  border: 1px solid;
+}
+
+.flex-box {
+  display: flex;
+  border: 1px solid;
+}
+
+
+.markdown-area {
+  white-space: pre;
+  font-family: monospace;
+}
+
+
+.navigation {
+  width: 20%;
+}
+.main {
+  width: 80%;
+}
