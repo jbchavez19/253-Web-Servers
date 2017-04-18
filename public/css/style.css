@@ -1,15 +1,51 @@
 .container {
+  width: 100%;
+}
+
+.container, .markdown, .preview, .markdown-preview-header, .navigation-header, .main-header, .markdown-header, .preview-header, .file-name, .word-count {
   border: 1px solid;
+}
+
+.word-count {
+  text-align: right;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
+  width: 50%;
+}
+
+.file-info, .markdown-preview-header {
+  width: 100%;
+  height: 50%;
 }
 
 .flex-box {
   display: flex;
-  border: 1px solid;
+  word-wrap: break-word;
 }
 
+.container-header {
 
-.markdown-area {
-  white-space: pre;
+}
+
+.container-body {
+
+}
+
+.navigation-body, .navigation-header {
+  width: 20%;
+}
+.main-body, .main-header {
+  width: 80%;
+}
+
+.markdown {
+  white-space: pre-line;
   font-family: monospace;
 }
 
