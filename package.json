@@ -1,0 +1,25 @@
+{
+  "name": "253-web-servers",
+  "version": "1.0.0",
+  "description": "## #standing-koala Jose Chavez Dominguez, Somaya Bounouar",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbchavez19/253-Web-Servers.git"
+  },
+  "author": "Jose Chavez, Somaya Bounouar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbchavez19/253-Web-Servers/issues"
+  },
+  "homepage": "https://github.com/jbchavez19/253-Web-Servers#readme"
+}

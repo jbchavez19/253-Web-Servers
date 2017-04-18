@@ -1,0 +1,56 @@
+blockquote {
+  margin-left: .5em;
+  padding-left: 2em;
+  border-left: solid .5em lightgray;
+}
+
+.container {
+  border: solid 1px;
+}
+
+.navigation-header, .main-header, .file-info {
+  border-bottom: solid 1px;
+}
+.markdown-header, .markdown, .navigation-header, .navigation-body {
+  border-right: solid 1px;
+}
+
+.container-header, .markdown-preview-header, .container-body, .main-body,
+  .main-header, .file-info {
+  display: flex;
+  word-wrap: break-word;
+}
+
+.word-count {
+  text-align: right;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-info {
+  background-color: gray;
+}
+
+.file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
+  width: 50%;
+}
+
+.file-info, .markdown-preview-header {
+  width: 100%;
+  height: 50%;
+}
+
+.navigation-body, .navigation-header, .navigation {
+  width: 20%;
+}
+.main-body, .main-header {
+  width: 80%;
+}
+
+.markdown {
+  white-space: pre-line;
+  font-family: monospace;
+}
