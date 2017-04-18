@@ -1,14 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
+const pug = require('pug');
 
 const app = express();
 const port = 3000;
 
+app.set('view engine', "pug");
+app.set("views","views");
+
+
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Web Server');
+app.get("/", (req, res) => {
+  res.render("Index");
 });
 
 app.listen(port, () => {
