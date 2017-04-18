@@ -151,9 +151,9 @@ Build out the template structure with [Pug][] for a single-file editor. Don't wo
 
 Setup real markdown rendering so that writing in the left panel updates the right panel, and make the "Save" button work.
 
-- [ ] [Marked][marked] is installed
-- [ ] Markdown text written in the "Editor" pane is rendered in the "Preview" pane automatically
-- [ ] Preview is updated every time text in the editor changes
+- [x] [Marked][marked] is installed
+- [x] Markdown text written in the "Editor" pane is rendered in the "Preview" pane automatically
+- [x] Preview is updated every time text in the editor changes
 - [ ] Clicking the "Save" button saves the markdown text in the editor to a file in a subdirectory of the server `data/`
 - [ ] The markdown file in `data/` is loaded and used as the starter text in the editor (in other words, the last saved text is loaded by default)
 
