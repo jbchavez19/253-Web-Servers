@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  
+  div.container
+    
+    include Header.pug  
+    
+    div.container-body
+      
+      include Sidebar.pug
+      
+      div.main-body
+          
+        include Editor.pug
+        
+        include Preview.pug
+  

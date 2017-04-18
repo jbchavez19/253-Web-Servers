@@ -136,16 +136,16 @@ Setup the repo and file structure, install and configure [Express][], and get a 
 
 Build out the template structure with [Pug][] for a single-file editor. Don't worry about multiple files for now, or implementing the markdown rendering.
 
-- [ ] [Pug][pug] is installed and set up for HTML templating
-- [ ] View template files are created in the `/views` subdirectory
-- [ ] Main view file is called `index`
-- [ ] Includes are created for the different "components" of the main view:
-  - [ ] Sidebar (shows list of files)
-  - [ ] Header (shows current filename, word count, and save button)
-  - [ ] Editor (shows markdown editor pane)
-  - [ ] Preview (shows rendered markdown)
-- [ ] CSS is organized into one or more files in the `public/` directory
-- [ ] CSS declarations are well-named and formatted (consider using this [small guide](http://tinystride.com/articles/organized-css-a-small-guide/))
+- [x] [Pug][pug] is installed and set up for HTML templating
+- [x] View template files are created in the `/views` subdirectory
+- [x] Main view file is called `index`
+- [x] Includes are created for the different "components" of the main view:
+  - [x] Sidebar (shows list of files)
+  - [x] Header (shows current filename, word count, and save button)
+  - [x] Editor (shows markdown editor pane)
+  - [x] Preview (shows rendered markdown)
+- [x] CSS is organized into one or more files in the `public/` directory
+- [x] CSS declarations are well-named and formatted (consider using this [small guide](http://tinystride.com/articles/organized-css-a-small-guide/))
 
 #### Stage 3
 
