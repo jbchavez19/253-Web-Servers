@@ -1,9 +1,24 @@
-.container {
-  width: 100%;
+blockquote {
+  margin-left: .5em;
+  padding-left: 2em;
+  border-left: solid .5em lightgray;
 }
 
-.container, .markdown, .preview, .markdown-preview-header, .navigation-header, .main-header, .markdown-header, .preview-header, .file-name, .word-count {
-  border: 1px solid;
+.container {
+  border: solid 1px;
+}
+
+.navigation-header, .main-header, .file-info {
+  border-bottom: solid 1px;
+}
+.markdown-header, .markdown, .navigation-header, .navigation-body {
+  border-right: solid 1px;
+}
+
+.container-header, .markdown-preview-header, .container-body, .main-body,
+  .main-header, .file-info {
+  display: flex;
+  word-wrap: break-word;
 }
 
 .word-count {
@@ -15,6 +30,10 @@
   flex-direction: column;
 }
 
+.file-info {
+  background-color: gray;
+}
+
 .file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
   width: 50%;
 }
@@ -24,20 +43,7 @@
   height: 50%;
 }
 
-.flex-box {
-  display: flex;
-  word-wrap: break-word;
-}
-
-.container-header {
-
-}
-
-.container-body {
-
-}
-
-.navigation-body, .navigation-header {
+.navigation-body, .navigation-header, .navigation {
   width: 20%;
 }
 .main-body, .main-header {
@@ -47,12 +53,4 @@
 .markdown {
   white-space: pre-line;
   font-family: monospace;
-}
-
-
-.navigation {
-  width: 20%;
-}
-.main {
-  width: 80%;
 }
