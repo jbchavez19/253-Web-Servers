@@ -7,7 +7,7 @@ let updatePreview = () => {
 
 let newFile = () => {
   let newFileName = prompt('Enter file name')
-  fetch('/new/?fileName='+newFileName, {
+  fetch('/actions/new/?fileName=' + newFileName, {
     method: 'get',
     headers: {
       "Content-Type": "text/plain"
@@ -16,11 +16,23 @@ let newFile = () => {
   .then((response) => {
       return response.text()
   })
+  .then((response) => {
+    if(response == '1') {
+      let li = document.createElement("li");
+      li.innerHTML = '<a href="' + newFileName + '"> ' + newFileName + '</a>';
+      document.querySelector(".file-tree").appendChild(li);
+    }
+  })
 }
 
-let save = () => {
+let getFileName = () => {
+  let fileName = window.location.pathname;
+  return fileName.match(/\/(.*)/)[1];
+}
+
+let save = (file) => {
   let editorInput = document.getElementById("editor").value
-  fetch('/save', {
+  fetch('/actions/save?fileName=' + file, {
     method: 'post',
     headers: {
       "Content-Type": "text/plain"
@@ -30,12 +42,14 @@ let save = () => {
   .then((response) => {
     return response.text()
   })
-  .then(console.log)
+  .then((response) => {
+    document.cookie = "lastEdited=" + file;
+  })
   .catch(console.log)
 }
 
-let load = () => {
-  fetch('/load', {
+let load = (file) => {
+  fetch('/actions/load?fileName=' + file, {
     method: 'get',
     headers: {
       "Content-Type": "text/plain"
@@ -52,8 +66,10 @@ let load = () => {
 
 
 window.onload = () => {
-  document.getElementById("editor").addEventListener("input", updatePreview)
-  document.getElementById("save").addEventListener("click", save)
-  load()
-  document.getElementById("new-file").addEventListener("click", newFile)
+  document.getElementById("editor").addEventListener("input", updatePreview);
+  document.getElementById("save").addEventListener("click",() => {
+    save(getFileName());
+  });
+  load(getFileName());
+  document.getElementById("new-file").addEventListener("click", newFile);
 }

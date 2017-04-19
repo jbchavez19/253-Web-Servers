@@ -4,9 +4,7 @@ block content
 
   .navigation-body
     ul.file-tree
-      li Groceries.md
-      li Todos.md
-      li ExampleFile.md
-      li Blog.md
-      li Draft.md
-      a#new-file(href='javascript:void(0)') New File +
+      each val in listOfFiles
+        li
+          a(href= val) #{val}
+    a#new-file(href='javascript:void(0)') New File +
