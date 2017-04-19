@@ -59,3 +59,8 @@ blockquote {
 textarea {
   width: 100%;
 }
+
+.fa-trash {
+  float: right;
+  padding-right: .5em;
+}
