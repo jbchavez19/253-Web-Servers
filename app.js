@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const http = require('http');
+// const http = require('http');
 const pug = require('pug');
 const marked = require('marked');
 const fs = require('fs');
@@ -34,6 +34,13 @@ app.get("/load", (req, res) => {
       res.send(str)
   });
 });
+
+
+app.get("new", (req, res) => {
+  // let writeStream = fs.createReadStream(newFileName)
+  req.query.fileName
+  console.log(fileName)
+})
 
 
 app.listen(port, () => {

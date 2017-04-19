@@ -5,6 +5,19 @@ let updatePreview = () => {
   document.querySelector(".preview").innerHTML = markdown
 }
 
+let newFile = () => {
+  let newFileName = prompt('Enter file name')
+  fetch('/new/?fileName='+newFileName, {
+    method: 'get',
+    headers: {
+      "Content-Type": "text/plain"
+    }
+  })
+  .then((response) => {
+      return response.text()
+  })
+}
+
 let save = () => {
   let editorInput = document.getElementById("editor").value
   fetch('/save', {
@@ -42,4 +55,5 @@ window.onload = () => {
   document.getElementById("editor").addEventListener("input", updatePreview)
   document.getElementById("save").addEventListener("click", save)
   load()
+  document.getElementById("new-file").addEventListener("click", newFile)
 }
