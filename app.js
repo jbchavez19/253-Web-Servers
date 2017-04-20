@@ -63,8 +63,9 @@ app.get("*", (req, res) => {
   }
   else {
     fs.readdir('./data/', (error, files) => {
+      let fileName = req.url.match(/[^/]+$/)[0]
       res.render("Index", {
-        fileName: req.url,
+        fileName: fileName,
         listOfFiles: files
       });
     });

@@ -35,6 +35,7 @@ let newFile = () => {
   .then((response) => {
     if(response == '1') {
       let li = document.createElement("li");
+      li.className = "file-tree-item";
       li.innerHTML = '<a href="' + newFileName + '"> ' + newFileName + '</a>' +
       '<a href="/actions/delete?fileName=' + newFileName +
       '"><i class="fa fa-trash"> </i></a>';
