@@ -17,7 +17,7 @@ app.set("views","views");
 app.use(express.static('public'));
 
 app.post("/actions/save", (req, res) => {
-  let writeStream = fs.createWriteStream('data/' + req.query.fileName)
+  let writeStream = fs.createWriteStream('data/' + req.query.fileName);
   writeStream.write(req.body)
   writeStream.end();
   res.send('1');
@@ -31,16 +31,26 @@ app.get("/actions/load", (req, res) => {
     str += chunk
   }).on('end', () => {
       res.send(str)
+  }).on('error', (error) => {
+    res.send("File not found!");
   });
 });
 
 
 app.get("/actions/new", (req, res) => {
-  let writeStream = fs.createWriteStream('data/' + req.query.fileName);
+  let fileName = req.query.fileName;
+  let writeStream = fs.createWriteStream('data/' + fileName);
   writeStream.write(' ');
   writeStream.end();
   res.send('1');
-})
+});
+
+app.get('/actions/delete', (req, res) => {
+  let fileName = req.query.fileName;
+  if(fileName != 'ExampleFile.md')
+    fs.unlinkSync('./data/' + fileName);
+  res.redirect('/');
+});
 
 app.get("*", (req, res) => {
   if(req.url == '/') {
@@ -48,12 +58,13 @@ app.get("*", (req, res) => {
       res.redirect('/' + req.cookies.lastEdited);
     }
     else {
-      res.redirect('/MARKDOWN.md');
+      res.redirect('/ExampleFile.md');
     }
   }
   else {
     fs.readdir('./data/', (error, files) => {
       res.render("Index", {
+        fileName: req.url,
         listOfFiles: files
       });
     });

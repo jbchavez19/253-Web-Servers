@@ -5,7 +5,9 @@ block content
   .navigation-body
     ul.file-tree
       each val in listOfFiles
-        li
+        li.file-tree-item
           a(href= val) #{val}
-          i.fa.fa-trash
+          if val != 'ExampleFile.md'
+            a(href= 'actions/delete?fileName=' + val)
+              i.fa.fa-trash(aria-hidden='true')
     a#new-file(href='javascript:void(0)') New File +
