@@ -45,8 +45,9 @@ let newFile = () => {
 
 let getFileName = () => {
   let fileName = window.location.pathname;
-  if(fileName == '/ExampleFile.md');
+  if(fileName === '/ExampleFile.md')
     document.getElementById("editor").setAttribute("readonly", true);
+
   return fileName.match(/\/(.*)/)[1];
 }
 
