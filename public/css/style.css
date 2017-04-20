@@ -10,6 +10,11 @@
   border-bottom: solid .2em gray;
 }
 
+#new-file {
+  padding: 0.5em;
+  margin: 0;
+}
+
 blockquote {
   margin-left: .5em;
   padding-left: 2em;
@@ -17,15 +22,17 @@ blockquote {
 }
 
 .container {
-  border: solid 1px;
+  border: solid 0.3em;
   word-wrap: break-word;
+  border-color: #d2cfcf
 }
 
 .navigation-header, .main-header, .file-info {
   border-bottom: solid 1px;
+  border-color: gray;
 }
-.markdown-header, .markdown, .navigation-header, .navigation-body {
-  border-right: solid 1px;
+.markdown-header, .navigation-header, .navigation-body {
+  border-right: solid 1px gray;
 }
 
 .container-header, .markdown-preview-header, .container-body, .main-body,
@@ -44,11 +51,12 @@ blockquote {
 }
 
 .file-info {
-  background-color: gray;
+  background-color: #504e4e;
 }
 
 .file-name, .word-count,.markdown-header, .preview-header, .markdown, .preview {
   width: 50%;
+  padding: 0.5em;
 }
 
 .file-info, .markdown-preview-header {
@@ -67,13 +75,37 @@ blockquote {
   white-space: pre-line;
   font-family: monospace;
   display: flex;
+  border-right: solid 1px gray;
 }
 
 textarea {
   width: 100%;
+  border: none;
 }
 
 .fa-trash {
   float: right;
   padding-right: .5em;
+}
+
+.container-body, .navigation-header {
+  background-color: #e3e3e3;
+}
+
+.markdown, .preview, #editor, .main-header {
+  background-color: #f6f6f6;
+}
+
+.file-info {
+  color: white;
+}
+
+.word-count {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.save-btn {
+  margin: 0.5em;
+  padding: 0.5em;
 }

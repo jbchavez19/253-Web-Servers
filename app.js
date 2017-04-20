@@ -10,34 +10,34 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.text());
 app.use(cookieParser());
-app.set('view engine', "pug");
-app.set("views","views");
+app.set('view engine', 'pug');
+app.set('views','views');
 
 
 app.use(express.static('public'));
 
-app.post("/actions/save", (req, res) => {
+app.post('/actions/save', (req, res) => {
   let writeStream = fs.createWriteStream('data/' + req.query.fileName);
   writeStream.write(req.body)
   writeStream.end();
   res.send('1');
 });
 
-app.get("/actions/load", (req, res) => {
+app.get('/actions/load', (req, res) => {
   let str = '';
   let fileName = req.query.fileName;
   let readStream = fs.createReadStream('./data/' + fileName);
   readStream.on('data', (chunk) => {
-    str += chunk
+    str += chunk;
   }).on('end', () => {
-      res.send(str)
+      res.send(str);
   }).on('error', (error) => {
     res.send("File not found!");
   });
 });
 
 
-app.get("/actions/new", (req, res) => {
+app.get('/actions/new', (req, res) => {
   let fileName = req.query.fileName;
   let writeStream = fs.createWriteStream('data/' + fileName);
   writeStream.write(' ');
@@ -52,7 +52,7 @@ app.get('/actions/delete', (req, res) => {
   res.redirect('/');
 });
 
-app.get("*", (req, res) => {
+app.get('*', (req, res) => {
   if(req.url == '/') {
     if(req.cookies.lastEdited !== undefined) {
       res.redirect('/' + req.cookies.lastEdited);
@@ -63,8 +63,9 @@ app.get("*", (req, res) => {
   }
   else {
     fs.readdir('./data/', (error, files) => {
+      let fileName = req.url.match(/[^/]+$/)[0]
       res.render("Index", {
-        fileName: req.url,
+        fileName: fileName,
         listOfFiles: files
       });
     });
